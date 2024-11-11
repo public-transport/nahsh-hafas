@@ -24,14 +24,14 @@ Check [the docs for `hafas-client@2`](https://github.com/derhuerst/hafas-client/
 ```javascript
 const createClient = require('nahsh-hafas')
 
-const client = createHafas('my-awesome-program-useragent')
+const client = createClient('my-awesome-program-useragent')
 ```
 
 As an example, we will search for a route from *Flensburg* to *Kiel Hbf*. To get the station ids, use [`locations(query, [opt])`](https://github.com/derhuerst/hafas-client/blob/5/docs/locations.md).
 
 ```javascript
 client.journeys('8000103', '8000199')
-.then((journeys) => console.log(journeys[0]))
+.then((response) => console.log(response.journeys[0]))
 .catch(console.error)
 ```
 
